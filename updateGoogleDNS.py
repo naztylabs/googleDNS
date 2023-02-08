@@ -58,7 +58,7 @@ def updateGoogleDNS(domain):
         logging.error(timeNow + ERROR + 'Unable to parse domain')
         exit(1)
     
-    domain = domain + '' # Insert the rest of your domain here (i.e. if full route is home.myserver.com you'd put in myserver.com)
+    domain = domain + '.' + '' # Insert the rest of your domain here (i.e. if full route is home.myserver.com you'd put in myserver.com)
 
     try:
         updateURL = 'https://{}:{}@domains.google.com/nic/update?hostname={}&myip={}'.format(username, password, domain, getExternalIP())
